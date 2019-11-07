@@ -3,6 +3,7 @@ class EndUser::RoomsController < EndUser::BaseController
   end
 
   def index
+    @rooms = Room.all
   end
 
   def show

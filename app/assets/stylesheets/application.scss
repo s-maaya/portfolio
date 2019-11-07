@@ -14,15 +14,19 @@
  *= require_self
  */
 
-.header-line{
+.header-line {
     width: 100%;
     background-color: blueviolet;
 }
 
-.header-item{
+.header-item {
     font-size: 32px;
 }
 
-.fa{
+.fa {
     font-size: 2em;
+}
+
+.roombox {
+    width: 50%;
 }
