@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  namespace :admin do
+    devise_for :admin_users, controllers: {
+    sessions: 'admin/admin_users/sessions',
+    registrations: 'admin/admin_users/registrations',
+    passwords: 'admin/admin_users/passwords'
+    }
+    resources :rooms
+  end
+
+  scope module: 'end_user' do
+    devise_for :users, controllers: {
+      sessions: 'end_user/users/sessions',
+      registrations: 'end_user/users/registrations',
+      passwords: 'end_user/users/passwords'
+    }
+    root to: 'rooms#top'
+    resources :rooms
+    resources :messages
+  end
 end
