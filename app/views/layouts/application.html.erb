@@ -1,35 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Portfolio</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+<title>Portfolio</title>
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
 
-    <script src="https://kit.fontawesome.com/150fad54ca.js" crossorigin="anonymous"></script>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<script src="https://kit.fontawesome.com/150fad54ca.js" crossorigin="anonymous"></script>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-  <header class="header-line">
-  <div class="continer">
-    <div class="row">
-      <div class="col-lg-6">
-        <p class="logo-icon">
-          logo
-        </p>
-      </div><!--col-->
-      <div class="col-lg-6">
-        <div class="header-icon">
-          <%= link_to root_path do %>
-            <p><i class="fas fa-map-marker-alt fa-fx-3"></i></p>
-          <%end%>
-        </div>
-      </div><!--col-->
-    </div><!--row-->
-  </div><!--continer-->
-  </header>
-  <%= yield %>
+<body>
+<%= yield %>
 
-  </body>
-  </html>
+</body>
+</html>
