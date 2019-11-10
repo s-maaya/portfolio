@@ -7,6 +7,7 @@ class EndUser::RoomsController < EndUser::BaseController
   end
 
   def show
+    @messages = Message.all
   end
 
   def new
