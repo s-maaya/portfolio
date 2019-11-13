@@ -13,39 +13,25 @@
   <body>
   <header class="header-line">
   <div class="continer">
-    <div class="row">
-      <div class="col-lg-6">
         <p class="logo-icon">
           logo_enduser
         </p>
-      </div><!--col-->
-      <div class="col-lg-6">
-        <div class="header-icon">
-          <%= link_to root_path do %>
-            <p><i class="fas fa-map-marker-alt fa-fx-3"></i></p>
+          <%= link_to new_room_path do %>
+            <p class="header-icon"><span class="fas fa-folder-plus fa-fx-3"></span></p>
           <%end%>
-        </div>
-        <div class="header-icon">
           <%= link_to new_user_registration_path do %>
-            <p><i class="fas fa-user-plus fa-fx-3"></i></p>
+            <p class="header-icon"><span class="fas fa-user-plus fa-fx-3"></span></p>
           <%end%>
-        </div>
-        <div class="header-icon">
+          <%= link_to rooms_path do %>
+            <p class="header-icon"><span class="fas fa-th-large fa-fx-3"></span></p>
+          <%end%>
           <%= link_to new_user_registration_path do %>
-            <p><i class="fas fa-th-large fa-fx-3"></i></p>
+            <p class="header-icon"><span class="fas fa-sign-in-alt fa-fx-3"></span></p>
           <%end%>
-        </div>
-        <div class="header-icon">
-          <%= link_to new_user_registration_path do %>
-            <p><i class="far fa-sign-in fa-fx-3"></i></p>
-          <%end%>
-        </div>
-      </div>
-      </div><!--col-->
-    </div><!--row-->
-  </div><!--continer-->
+  </div>
   </header>
   <%= yield %>
 
   </body>
   </html>
+

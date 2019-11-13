@@ -1,2 +1,38 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+<div class="container">
+    <div>
+        <table border="1">
+            <tr>
+                <th>画像</th><td><%= attachment_image_tag @room, :image, :fill, 60, 60, class:"img-circle pull-left profile-thumb", fallback: "no_image.jpg",size:"20x20"%></td>
+            </tr>
+            <tr>
+                <th>ニックネーム</th><td><%= current_user.name %></td>
+            </tr>
+            <tr>
+                <th>開催日時</th><td><%= @room.start_date %></td>
+            </tr>
+            <tr>
+                <th>開催場所</th><td><%= @room.address %></td>
+            </tr>
+        </table>
+
+
+
+
+
+    <h1>chat room</h1>
+    <form class="form-inline">
+        <div class="form-group">
+            <input type="text" name="content" class="form-control" id="chat-content" />
+            <!-- type="hidden"で隠せる。 -->
+            <!-- nameで値をラベル付けできる。 -->
+            <!-- valueに実際の値をいれる -->
+            <input type="hidden" name="userid" value=<%= current_user.id %> class="form-control" id="chat-user-id" />
+            <!-- roomidのはなし-->
+            <input type="hidden" name="roomid" value=<%= @room.id %> class="form-control" id="chat-room-id" />
+        </div>
+        <button id="button" class="btn-primary" >送信</button>
+    </form>
+    <div id="messages">
+    <%= render @messages %>
+    </div> 
+</div>

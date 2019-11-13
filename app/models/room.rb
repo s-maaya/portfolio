@@ -1,4 +1,4 @@
 class Room < ApplicationRecord
-    has_many :message
+    has_many :messages
     attachment :image
 end
