@@ -13,23 +13,22 @@
   <body>
   <header class="header-line">
   <div class="continer">
-    <div class="row">
-      <div class="col-lg-6">
         <p class="logo-icon">
-          logo_admin
+          logo_adminuser
         </p>
-      </div><!--col-->
-      <div class="col-lg-6">
-        <div class="header-icon">
-          <%= link_to root_path do %>
-            <p><i class="fas fa-map-marker-alt fa-fx-3"></i></p>
+          <%= link_to new_admin_admin_user_session_path do %>
+            <p class="header-icon">新規登録<span class="fas fa-user-plus fa-fx-3"></span></p>
           <%end%>
-        </div>
-      </div><!--col-->
-    </div><!--row-->
-  </div><!--continer-->
+          <%= link_to admin_rooms_path do %>
+            <p class="header-icon">投稿一覧<span class="fas fa-th-large fa-fx-3"></span></p>
+          <%end%>
+          <%= link_to destroy_admin_admin_user_session_path,  method: :delete do %>
+            <p class="header-icon">ログアウト<span class="fas fa-sign-out-alt fa-fx-3"></span></p>
+          <%end%>
+  </div>
   </header>
   <%= yield %>
 
   </body>
   </html>
+

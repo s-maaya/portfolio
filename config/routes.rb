@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     registrations: 'admin/admin_users/registrations',
     passwords: 'admin/admin_users/passwords'
     }
+    root to: 'rooms#top'
     resources :rooms
   end
 
