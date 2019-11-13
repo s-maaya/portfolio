@@ -4,10 +4,12 @@ class EndUser::RoomsController < EndUser::BaseController
 
   def index
     @rooms = Room.all
+    # @room = Room.find(params[:id])
   end
 
   def show
-    @messages = Message.all
+    @room = Room.find(params[:id])
+    @messages = @room.messages # Room(親)モデルのhas_manyとおなじ
   end
 
   def new
@@ -20,12 +22,12 @@ class EndUser::RoomsController < EndUser::BaseController
   def create
     @room = Room.new(room_params)
     @room.save
-    redirect_to root_path
+    redirect_to room_path(@room)
   end
 
 
   private
   def room_params
-    params.require(:room).permit(:image_id, :title, :details, :address, :station)
+    params.require(:room).permit(:image, :title, :details, :address, :station)
   end
 end

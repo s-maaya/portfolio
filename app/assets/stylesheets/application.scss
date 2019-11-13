@@ -13,20 +13,26 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
+.logo-icon {
+    color: black;
+}
 
 .header-line {
-    width: 100%;
     background-color: blueviolet;
 }
 
-.header-item {
-    font-size: 32px;
-}
-
-.fa {
+.header-icon {
     font-size: 2em;
+    color: black;
 }
 
 .roombox {
     width: 50%;
+}
+
+
+.roombox {
+    border: black;
 }

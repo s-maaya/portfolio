@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2019_11_05_111040) do
   end
 
   create_table "messages", force: :cascade do |t|
+    t.integer "room_id"
+    t.integer "user_id"
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_111040) do
     t.string "details"
     t.text "address"
     t.string "station"
-    t.datetime "post_at"
+    t.datetime "start_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

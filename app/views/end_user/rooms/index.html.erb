@@ -1,19 +1,17 @@
 <h1>Rooms#index</h1>
 写真の投稿とレイアウトの編集
+<!-- %= をつけないときはeachとかの見た目に出さないやつ -->
+<% @rooms.each do |room| %>
 
-    <% @rooms.each do |room| %>
+    <!-- %= をつけるときは見た目に出すとき >-->
+    <%= link_to room_path(room), class:'index-box' do %>
         <div class="roombox">
-        <%
-=begin%>
- <p>画像<%= attachment_image_tag room, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:'100x100' %></p> 
-<%
-=end%>
-        <p>ニックネーム<%= current_user.name %></p>
-        <p>開催日時<%= room.post_at %></p>
-        <p>開催場所<%= room.address %></p>
-        <p>タイトル<%= room.title %></p>
-        <p>詳細<%= room.details %></p>
+            <p>画像<%= attachment_image_tag room, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:'100x100' %></p>
+            <p>ニックネーム<%= current_user.name %></p>
+            <p>開催日時<%= room.start_date %></p>
+            <p>開催場所<%= room.address %></p>
+            <p>タイトル<%= room.title %></p>
+            <p>詳細<%= room.details %></p>
         </div>
-    <%end%>
-
-
+    <% end %>
+<% end %>
