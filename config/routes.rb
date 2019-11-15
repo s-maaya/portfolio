@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-
-  namespace :admin do
-    devise_for :admin_users, controllers: {
+  devise_for :admin_users, controllers: {
     sessions: 'admin/admin_users/sessions',
     registrations: 'admin/admin_users/registrations',
     passwords: 'admin/admin_users/passwords'
-    }
+  }
+  namespace :admin do
+
     root to: 'rooms#top'
     resources :rooms
   end

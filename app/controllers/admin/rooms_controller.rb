@@ -4,7 +4,6 @@ class Admin::RoomsController < Admin::BaseController
 
   def index
     @rooms = Room.all
-    # @room = Room.find(params[:id])
   end
 
   def show

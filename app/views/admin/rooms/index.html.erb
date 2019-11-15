@@ -1,3 +1,27 @@
 <h1>Rooms#index</h1>
 admin側
+<div class="">
+    
+    <table border="1">
+    <thead>
+        <tr>
+            <th>投稿者</th>
+            <th>タイトル</th>
+            <th>開催日時</th>
+            <th>開催場所</th>
+        </tr>
+    </thead>
+        <% @rooms.each do |room| %>
+    <tbody>
+        <tr>
+            <td><%= room.user.name %></td>
+            <td><%= room.title %></td>
+            <td><%= room.start_date %></td>
+            <td><%= room.address %></td>
+        </tr>
+    </tbody>
+        <% end %>
+    </table>
+</div>
+
 
