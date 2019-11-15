@@ -21,13 +21,18 @@ class EndUser::RoomsController < EndUser::BaseController
 
   def create
     @room = Room.new(room_params)
-    @room.save
-    redirect_to room_path(@room)
+    # 現在ログインしているユーザーの情報をroom.userに代入する
+    @room.user_id = current_user.id
+    if @room.save
+      redirect_to room_path(@room.id)
+    else
+      render :new_room
+    end
   end
 
 
   private
   def room_params
-    params.require(:room).permit(:image, :title, :details, :address, :station)
+    params.require(:room).permit(:user_id, :image, :title, :details, :address, :station)
   end
 end

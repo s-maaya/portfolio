@@ -1,9 +1,27 @@
 <h1>Rooms#index</h1>
+admin側
+<div class="">
+    
+    <table border="1">
+    <thead>
+        <tr>
+            <th>投稿者</th>
+            <th>タイトル</th>
+            <th>開催日時</th>
+            <th>開催場所</th>
+        </tr>
+    </thead>
+        <% @rooms.each do |room| %>
+    <tbody>
+        <tr>
+            <td><%= room.user.name %></td>
+            <td><%= room.title %></td>
+            <td><%= room.start_date %></td>
+            <td><%= room.address %></td>
+        </tr>
+    </tbody>
+        <% end %>
+    </table>
+</div>
 
-<%= attachment_image_tag current_user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg",size:"20x20"%>
 
-<table class="table">
-            <tr>
-            <th>nicname</th>
-            <td><%= current_user.name %></td>
-            </tr>
