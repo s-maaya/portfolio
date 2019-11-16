@@ -5,6 +5,8 @@
 // end-usr-room-indexのcss
 .index-box {
     text-decoration: none !important;
+    width: 280px;
+    height: 188px;
 }
 
 .index-list {
@@ -14,6 +16,8 @@
     margin: 10px 8px 10px 16px;
     position: relative;
     background-color: goldenrod;
+    display: flexbox;
+    flex-direction: row;
 }
 
 .index-list .caption {

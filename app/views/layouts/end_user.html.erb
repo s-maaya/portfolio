@@ -13,40 +13,40 @@
   <body>
     <header>
       <div class="inner">
+      <div class="flexbox">
         <h1 class="logo-icon">
           logo_enduser
         </h1>
-        <% if user_signed_in? %><!--ログイン状態のときに表示される-->
-          <p>ログイン状態</p>
           <nav class="nav">
+            <% if user_signed_in? %><!--ログイン状態のときに表示される-->
             <ul class="flexbox">
               <%= link_to new_room_path do %>
-                <p class="header-icon">新規投稿<span class="fas fa-folder-plus fa-fx-3"></span></p>
+                <li class="header-icon">新規投稿<i class="fas fa-folder-plus fa-fx-3"></i></li>
               <%end%>
               <%= link_to rooms_path do %>
-                <p class="header-icon">投稿一覧<span class="fas fa-th-large fa-fx-3"></span></p>
+                <li class="header-icon">投稿一覧<i class="fas fa-th-large fa-fx-3"></i></li>
               <%end%>
               <%= link_to destroy_user_session_path,  method: :delete do %>
-                <p class="header-icon">ログアウト<span class="fas fa-sign-out-alt fa-fx-3"></span></p>
+                <li class="header-icon">ログアウト<i class="fas fa-sign-out-alt fa-fx-3"></i></li>
               <%end%>
         <% else %>
             <!--ログアウト状態のときに表示される-->
-              <p>ログアウト</p>
               <%= link_to new_user_registration_path do %>
-                <p class="header-icon">user登録<span class="fas fa-user-plus fa-fx-3"></span></p>
+                <li class="header-icon">user登録<i class="fas fa-user-plus fa-fx-3"></i></li>
               <%end%>
               <%= link_to new_user_session_path do %>
-                <p class="header-icon">ログイン<span class="fas fa-sign-in-alt fa-fx-3"></span></p>
+                <li class="header-icon">ログイン<i class="fas fa-sign-in-alt fa-fx-3"></i></li>
               <%end%>
-
-            <% end %>
-          </ul>
-        </nav>
-
-  </div>
-  </header>
+              <%= link_to rooms_path do %>
+                <li class="header-icon">投稿一覧<i class="fas fa-th-large fa-fx-3"></i></li>
+              <%end%>
+            </ul>
+          </nav>
+        <% end %>
+          </div>
+        </div>
+    </header>
   <%= yield %>
-
   </body>
-  </html>
+</html>
 
