@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     root to: 'rooms#top'
     resources :rooms
     resources :messages
+    resources :users
     mount ActionCable.server => '/cable'
   end
 end

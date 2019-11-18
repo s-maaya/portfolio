@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   button.addEventListener('click', function () {
     // ここで上のspeak: がよばれる。
+    console.log(content.value, user_id.value, room_id.value)
     App.room.speak(content.value, user_id.value, room_id.value)
     content.value = ''
   })

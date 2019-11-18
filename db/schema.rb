@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2019_11_13_124807) do
   create_table "rooms", force: :cascade do |t|
     t.integer "user_id"
     t.string "title"
-    t.string "image_id"
     t.string "details"
     t.text "address"
     t.string "station"
@@ -61,6 +60,7 @@ ActiveRecord::Schema.define(version: 2019_11_13_124807) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.string "name"
+    t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

@@ -2,10 +2,7 @@
     <div>
         <table border="1">
             <tr>
-                <th>画像</th><td><%= attachment_image_tag @room, :image, :fill, 60, 60, class:"img-circle pull-left profile-thumb", fallback: "no_image.jpg",size:"20x20"%></td>
-            </tr>
-            <tr>
-                <th>ニックネーム</th><td><%= current_user.name %></td>
+                <th>ニックネーム</th><td><%= @room.user.name %></td>
             </tr>
             <tr>
                 <th>開催日時</th><td><%= @room.start_date %></td>

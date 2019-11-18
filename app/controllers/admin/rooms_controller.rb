@@ -27,6 +27,6 @@ class Admin::RoomsController < Admin::BaseController
 
   private
   def room_params
-    params.require(:room).permit(:image, :title, :details, :address, :station)
+    params.require(:room).permit(:user_id, :message_id, :image, :title, :details, :address, :station)
   end
 end

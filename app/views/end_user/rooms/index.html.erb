@@ -1,18 +1,26 @@
-<h1>Rooms#index</h1>
+<div class="container box">
+    <div class="row">
+        <div class="col-lg-offset-1 col-lg-10">
+
 <!-- %= をつけないときはeachとかの見た目に出さないやつ -->
-<% @rooms.each do |room| %>
-    <div class="index-list">
-        <!-- %= をつけるときは見た目に出すとき >-->
-        <%= link_to room_path(room), class:'index-box' do %>
-            <div class="roombox-item">開催日時<%= room.start_date %></div>
-            <div class="roombox-item">開催場所<%= room.address %></div>
-            <div class="roombox-item">開催場所<%= room.station %></div>
-            <div class="roombox-item">タイトル:<%= room.title %></div>
-                <div class="mask">
-                    <div class="caption"><%= room.details %></div>
-                </div>
+        <% @rooms.each do |room| %>
+            <div class="index-list">
+                <!-- %= をつけるときは見た目に出すとき >-->
+                <%= link_to room_path(room), class:'index-box' do %>
+                    <i class="roombox-item">開催日時<%= room.start_date %></i><br>
+                    <i class="roombox-item">開催場所<%= room.address %></i><br>
+                    <i class="roombox-item">開催場所<%= room.station %></i><br>
+                    <i class="roombox-item">タイトル:<%= room.title %></i><br>
+                        <div class="mask">
+                            <div class="caption"><%= room.details %></div>
+                        </div>
+                <% end %>
+            </div>
         <% end %>
+        </div>
+        <div class="col-lg-1"></div>
     </div>
-<% end %>
+</div>
+
 
 

@@ -1,19 +1,26 @@
 @charset "UTF-8";
+.box {
+  width: 100%;
+  text-align: center;
+}
+
 .index-box {
-  text-decoration: none !important;
-  width: 280px;
-  height: 188px;
+  width: 100%;
+  height: 200px;
+  text-align: center;
 }
 
 .index-list {
-  width: 280px;
-  height: 188px;
+  width: 200px;
+  height: 300px;
   overflow: hidden;
-  margin: 10px 8px 10px 16px;
+  margin: 30px;
   position: relative;
-  background-color: goldenrod;
-  display: flexbox;
+  background-color: orange;
+  display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  float: left;
 }
 
 .index-list .caption {

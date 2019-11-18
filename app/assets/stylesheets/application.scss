@@ -16,49 +16,53 @@
 @import "bootstrap";
 
 // ヘッダー
-body {
-    margin: 0;
+
+.container-fluid {
+    width: 100%;
 }
 
 h1 {
     margin: 0;
 }
 
-header {
-    align-items: center;
-    background-color: steelblue;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
-    display: flex;
-    height: 80px;
-    color: white;
-}
-
-header .inner {
-    margin: auto;
+.side {
+    // align-items: center;
+    background-color: rgb(52, 54, 56);
     width: 100%;
-    // width: 1020px;
+    color: black;
 }
 
-header .flexbox {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-}
 
 .logo-icon {
     vertical-align: bottom;
 }
 
-.nav ul {
-    list-style: none;
+.icon {
+    color: white;
 }
 
-.nav li {
+.nav {
+    list-style: none;
     margin: 0 15px;
     color: white;
     text-decoration: none;
 }
 
-.nav li:last-child {
-    margin-right: 0;
+.header-icon {
+    color: white;
+    text-align: center;
+}
+
+.row.content {
+    height: 550px
+}
+
+.got {
+    width: 100%;
+    height: 800px;
+    padding: 0;
+    background-image: url(human1.jpg);
+    background-position: top center;
+    background-position: center;
+    background-size: cover;
 }
