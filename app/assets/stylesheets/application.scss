@@ -19,6 +19,9 @@
 
 .container-fluid {
     width: 100%;
+    min-height: 100vh;
+    // background-attachment: fixed;
+
 }
 
 h1 {
@@ -65,4 +68,6 @@ h1 {
     background-position: top center;
     background-position: center;
     background-size: cover;
+    min-height: 100vh;
+    // background-attachment: fixed;
 }

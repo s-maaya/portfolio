@@ -1,26 +1,21 @@
-<div class="container box">
-    <div class="row">
-        <div class="col-lg-offset-1 col-lg-10">
 
 <!-- %= をつけないときはeachとかの見た目に出さないやつ -->
+<div class="row scroll">
         <% @rooms.each do |room| %>
-            <div class="index-list">
                 <!-- %= をつけるときは見た目に出すとき >-->
-                <%= link_to room_path(room), class:'index-box' do %>
-                    <i class="roombox-item">開催日時<%= room.start_date %></i><br>
-                    <i class="roombox-item">開催場所<%= room.address %></i><br>
-                    <i class="roombox-item">開催場所<%= room.station %></i><br>
-                    <i class="roombox-item">タイトル:<%= room.title %></i><br>
+                <%= link_to room_path(room), class:'index-box index-list' do %>
+                    --開催日時--<br>
+                    <%= room.start_date %><br>
+                    --開催場所--<br>
+                    <%= room.address %><br>
+                    --開催場所--<br>
+                    <%= room.station %><br>
+                    --タイトル--<br>
+                    <%= room.title %><br>
                         <div class="mask">
                             <div class="caption"><%= room.details %></div>
                         </div>
                 <% end %>
-            </div>
         <% end %>
-        </div>
-        <div class="col-lg-1"></div>
-    </div>
 </div>
-
-
 

@@ -14,20 +14,10 @@
     <div class="container-fluid">
       <div class="row content">
       <div class="col-lg-2 side sidenav hidden-xs">
-        <%
-=begin%>
- <div class="row"> 
-<%
-=end%>
         <div class="logo-icon">
           <h1><%= link_to "logo_enduser", root_path, class:"icon" %></h1>
         </div>
-        <%
-=begin%>
- </div> 
-<%
-=end%>
-            <% if user_signed_in? %><!--ログイン状態のときに表示される-->
+          <% if user_signed_in? %><!--ログイン状態のときに表示される-->
             <div class=" nav nav-pills nav-stacked">
               <div class="row header-icon">
                 <div class="col-lg-12">
