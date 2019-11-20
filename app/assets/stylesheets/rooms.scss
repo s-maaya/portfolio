@@ -62,12 +62,19 @@
 // --------show---------
 .chat-room {
     width: 90%;
-    height: 100hv;
+}
+
+.chat-coment {
+    display: block;
     background-color: bisque;
-    overflow: auto;
+    height: 100vh;
+    margin-bottom: 30px;
 
 }
 
-.form-inline {
+.form {
     display: block;
+    position: fixed;
+    bottom: 0px;
+    right: 10px;
 }

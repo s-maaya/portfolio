@@ -28,18 +28,26 @@
               </div>
               <br>
               <div class="row">
-              <div class="col-lg-12 header-icon">
-                <%= link_to rooms_path do %>
-                  投稿一覧<i class="fas fa-th-large fa-fx-3"></i>
-                <%end%>
+                <div class="col-lg-12 header-icon">
+                  <%= link_to user_path(current_user.id) do %>
+                    マイページ<i class="fas fa-user-alt fa-fx-3"></i>
+                  <%end%>
+                </div>
               </div>
+              <br>
+              <div class="row">
+                <div class="col-lg-12 header-icon">
+                  <%= link_to rooms_path do %>
+                    投稿一覧<i class="fas fa-th-large fa-fx-3"></i>
+                  <%end%>
+                </div>
               </div>
               <div class="row">
-              <div class="col-lg-12 header-icon">
-                <%= link_to destroy_user_session_path,  method: :delete do %>
-                  ログアウト<i class="fas fa-sign-out-alt fa-fx-3"></i>
-                <%end%>
-              </div>
+                <div class="col-lg-12 header-icon">
+                  <%= link_to destroy_user_session_path,  method: :delete do %>
+                    ログアウト<i class="fas fa-sign-out-alt fa-fx-3"></i>
+                  <%end%>
+                </div>
               </div>
         <% else %>
             <!--ログアウト状態のときに表示される-->
