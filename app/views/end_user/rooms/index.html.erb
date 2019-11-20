@@ -4,16 +4,16 @@
         <% @rooms.each do |room| %>
                 <!-- %= をつけるときは見た目に出すとき >-->
                 <%= link_to room_path(room), class:'index-box index-list' do %>
-                    --開催日時--<br>
-                    <%= room.start_date %><br>
-                    --開催場所--<br>
-                    <%= room.address %><br>
-                    --開催場所--<br>
-                    <%= room.station %><br>
-                    --タイトル--<br>
-                    <%= room.title %><br>
-                        <div class="mask">
-                            <div class="caption"><%= room.details %></div>
+                        --開催日時--<br>
+                        <%= room.start_date %><br>
+                        --開催場所--<br>
+                        <%= room.address %><br>
+                        --開催場所--<br>
+                        <%= room.station %><br>
+                        --タイトル--<br>
+                        <%= room.title %><br>
+                        <div class="mask caption">
+                                <%= room.details %>
                         </div>
                 <% end %>
         <% end %>
