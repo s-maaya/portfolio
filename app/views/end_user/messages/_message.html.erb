@@ -1,1 +1,11 @@
-<p><%= message.content %></p>
+
+
+<div class="message-image">
+<%= message.user.name %><br>
+<%= attachment_image_tag @user, :image,　format: 'jpeg', fallback: "no_image.jpg", size: "50x50", class:"image-icon"%>
+</div>
+
+    <span class="message-coment-box"><%= message.content %></span>
+    <span><%= message.created_at.strftime('%H:%M') %></span>
+
+<!--create_atの日にちがかったら、コメントいれる-->

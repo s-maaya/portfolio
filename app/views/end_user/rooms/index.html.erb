@@ -1,6 +1,6 @@
 
 <!-- %= をつけないときはeachとかの見た目に出さないやつ -->
-<div class="row scroll">
+<div class="row room-index-scroll">
         <% @rooms.each do |room| %>
                 <!-- %= をつけるときは見た目に出すとき >-->
                 <%= link_to room_path(room), class:'index-box index-list' do %>

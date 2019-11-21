@@ -12,28 +12,34 @@
             </tr>
         </table>
     </div>
-    <div class="col-lg-7 chat-room">
-        <div class="row chat-coment">
-            <h1>chat room</h1>
-            <div id="messages" class="scroll" data-room_id="<%= @room.id %>">
-                <%= render @messages %>
-            </div>
-        </div>
-        <!--送信ボタンのボックス-->
-        <div class="row form">
-            <form class="form-inline">
-                <div class="form-group">
-                    <input type="text" name="content" class="form-control" id="chat-content" />
-                    <input type="text" style="display:none" />
-                    <!-- type="hidden"で隠せる。 -->
-                    <!-- nameで値をラベル付けできる。 -->
-                    <!-- valueに実際の値をいれる -->
-                    <input type="hidden" name="userid" value=<%= current_user.id %> class="form-control" id="chat-user-id" />
-                    <!-- roomidのはなし-->
-                    <input type="hidden" name="roomid" value=<%= @room.id %> class="form-control" id="chat-room-id" />
+
+
+
+
+            <div class="col-lg-7 chat-room">
+                        <h1>chat room</h1>
+                <div class="row">
+                    <div id="messages" class="room-show-scroll" data-room_id="<%= @room.id %>">
+                        <%= render @messages %>
+                    </div>
                 </div>
-                <input type="button" id="button" class="btn-primary" value="送信">
-            </form>
+            </div>
+                <!--送信ボタンのボックス-->
+                <div class="row form">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <input type="text" name="content" class="form-control" id="chat-content" />
+                            <input type="text" style="display:none" />
+                            <!-- type="hidden"で隠せる。 -->
+                            <!-- nameで値をラベル付けできる。 -->
+                            <!-- valueに実際の値をいれる -->
+                            <input type="hidden" name="userid" value=<%= current_user.id %> class="form-control" id="chat-user-id" />
+                            <!-- roomidのはなし-->
+                            <input type="hidden" name="roomid" value=<%= @room.id %> class="form-control" id="chat-room-id" />
+                        </div>
+                        <input type="button" id="button" class="btn-primary" value="送信">
+                    </form>
         </div>
-    </div>
 </div>
+
+

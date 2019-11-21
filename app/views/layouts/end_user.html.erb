@@ -15,59 +15,63 @@
       <div class="row content">
       <div class="col-lg-2 side sidenav hidden-xs">
         <div class="logo-icon">
-          <h1><%= link_to "logo_enduser", root_path, class:"icon" %></h1>
+          <h1><%= link_to "logo-e", root_path, class:"icon" %></h1>
         </div>
-          <% if user_signed_in? %><!--ログイン状態のときに表示される-->
-            <div class=" nav nav-pills nav-stacked">
-              <div class="row header-icon">
-                <div class="col-lg-12">
-                  <%= link_to new_room_path do %>
-                    新規投稿<i class="fas fa-folder-plus fa-fx-3"></i>
+            <!--サイドメニューのリスト-->
+            <div id="nav-list">
+            <ul>
+              <% if user_signed_in? %><!--ログイン状態のときに表示される-->
+                <li class="header-icon">
+                    <%= link_to new_room_path ,class:"item" do %>
+                      <i class="fas fa-folder-plus fa-fx-3"><br>
+                      New</i>
+                    <%end%>
+                </li>
+                  <li class="header-icon">
+                    <%= link_to user_path(current_user.id) ,class:"item" do %>
+                      <i class="fas fa-user-alt fa-fx-3"><br>
+                      My page</i>
+                    <%end%>
+                </li>
+                  <li class="header-icon">
+                    <%= link_to rooms_path ,class:"item" do %>
+                      <i class="fas fa-th-large fa-fx-3"><br>
+                      List</i>
+                    <%end%>
+                </li>
+                  <li class="header-icon">
+                    <%= link_to destroy_user_session_path, class:"item",method: :delete do %>
+                      <i class="fas fa-sign-out-alt fa-fx-3"><br>
+                      Log out</i>
+                    <%end%>
+                </li>
+          <% else %>
+              <!--ログアウト状態のときに表示される-->
+                <li class="header-icon">
+                  <%= link_to rooms_path ,class:"item" do %>
+                    <i class="fas fa-th-large fa-fx-3"><br>
+                    List</i>
                   <%end%>
-                </div>
-              </div>
-              <br>
-              <div class="row">
-                <div class="col-lg-12 header-icon">
-                  <%= link_to user_path(current_user.id) do %>
-                    マイページ<i class="fas fa-user-alt fa-fx-3"></i>
+                </li>
+                <li class="header-icon">
+                  <%= link_to new_user_registration_path ,class:"item" do %>
+                    <i class="fas fa-user-plus fa-fx-3"><br>
+                    Sign up</i>
                   <%end%>
-                </div>
-              </div>
-              <br>
-              <div class="row">
-                <div class="col-lg-12 header-icon">
-                  <%= link_to rooms_path do %>
-                    投稿一覧<i class="fas fa-th-large fa-fx-3"></i>
+                </li>
+                  <li class="header-icon">
+                  <%= link_to new_user_session_path ,class:"item" do %>
+                    <i class="fas fa-sign-in-alt fa-fx-3"><br>
+                    Log in</i>
                   <%end%>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-12 header-icon">
-                  <%= link_to destroy_user_session_path,  method: :delete do %>
-                    ログアウト<i class="fas fa-sign-out-alt fa-fx-3"></i>
-                  <%end%>
-                </div>
-              </div>
-        <% else %>
-            <!--ログアウト状態のときに表示される-->
-            <li class="header-icon">
-              <%= link_to new_user_registration_path do %>
-                user登録<i class="fas fa-user-plus fa-fx-3"></i>
-              <%end%></li>
-              <li class="header-icon">
-              <%= link_to new_user_session_path do %>
-                ログイン<i class="fas fa-sign-in-alt fa-fx-3"></i>
-              <%end%></li>
-              <%= link_to rooms_path do %>
-                <li class="header-icon">投稿一覧<i class="fas fa-th-large fa-fx-3"></i></li>
-              <%end%>
-        <% end %>
+                </li>
+              <% end %>
+            </ul>
         </div>
     </div>
     <div class="col-lg-10  got">
-  <%= yield %>
-  </div>
+      <%= yield %>
+    </div>
   </div>
   </div>
   </body>
