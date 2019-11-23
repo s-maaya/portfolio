@@ -1,11 +1,26 @@
 
-
+<%# if current_user.id == message.user.id %>
+<div class=<%= "current-lyaout" if current_user.id == message.user.id %>>
+    <div class="message-image">
+    <%= message.user.name %><br>
+    <%= attachment_image_tag message.user, :image,　format: 'jpeg', fallback: "no_image.jpg", size: "50x50", class:"image-icon"%><br>
+        <span class="message-coment-box"><%= message.content %></span>
+        <span><%= message.created_at.strftime('%H:%M') %></span>
+    </div>
+</div>
+<%# else %>
+<%
+=begin%>
+ user
 <div class="message-image">
 <%= message.user.name %><br>
-<%= attachment_image_tag @user, :image,　format: 'jpeg', fallback: "no_image.jpg", size: "50x50", class:"image-icon"%>
-</div>
-
+<%= attachment_image_tag message.user, :image,　format: 'jpeg', fallback: "no_image.jpg", size: "50x50", class:"image-icon"%><br>
     <span class="message-coment-box"><%= message.content %></span>
     <span><%= message.created_at.strftime('%H:%M') %></span>
+</div> 
+<%
+=end%>
 
-<!--create_atの日にちがかったら、コメントいれる-->
+<%# end %>
+
+

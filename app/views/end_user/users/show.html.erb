@@ -1,16 +1,28 @@
+<div class="got-show">
         <h1>My ページ</h1>
 
-        <div>
-            <%= form_for(@user) do |f| %>
-            <div class="user-edit-image">
-                <%= attachment_image_tag @user, :image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
-            </div>
+    <div class="profile">
+        <div class="profile-box">
+        <%= form_for(@user) do |f| %>
+                <div class="form-group has-icon">
+                Name <%= f.text_field :name %>
+                </div>
+                <div class="form-group has-icon">
+                <div class="user-edit-image">
+                    <%= attachment_image_tag @user, :image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+                </div>
                 <label class="control-label sr-only" for="inputEmail">ProfileImage</label>
                 <%= f.attachment_field :image, placeholder: "プロフィール画像", class: "user-edit-form" %>
-            name <%= f.text_field :name %>
-            <% end %>
+                </div>
+                <div>
+                <%= f.submit "更新", class:"btn btn-secondary btn-lg rounded-pill" %>
+                </div>
+        <% end %>
         </div>
-        <div>
+    </div>
+
+    <div class="profile">
+        <div class="profile-box">
             投稿した記事一覧
             <table  border="1" width="50%">
             <tr>
@@ -26,6 +38,7 @@
             <% end %>
             </table>
         </div>
+    </div>
 
 
         チャットにコメントした記事一覧
@@ -51,5 +64,6 @@
         </tr>
         <% end %>
         </table>
+</div>
 
 

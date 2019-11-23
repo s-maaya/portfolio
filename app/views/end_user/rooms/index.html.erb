@@ -5,12 +5,12 @@
                 <!-- %= をつけるときは見た目に出すとき >-->
                 <%= link_to room_path(room), class:'index-box index-list' do %>
                         --開催日時--<br>
-                        <%= room.start_date %><br>
+                        <%= room.start_date %><br><br>
                         --開催場所--<br>
-                        <%= room.address %><br>
+                        <%= room.address %><br><br>
                         --開催場所--<br>
                         <%= room.station %><br>
-                        --タイトル--<br>
+                        --タイトル--<br><br>
                         <%= room.title %><br>
                         <div class="mask caption">
                                 <%= room.details %>

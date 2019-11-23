@@ -6,7 +6,15 @@
   position: relative;
   margin: 2em 0 2em 40px;
   padding: 8px 15px;
-  background: #fff0c6;
+  background: #eb892e;
+  border-radius: 30px;
+}
+
+.message-coment-box-left {
+  position: relative;
+  margin: 2em 0 2em 40px;
+  padding: 8px 15px;
+  background: blueviolet;
   border-radius: 30px;
 }
 
@@ -17,7 +25,7 @@
   font-size: 15px;
   left: -40px;
   bottom: 0;
-  color: #fff0c6;
+  color: #eb892e;
 }
 
 .message-coment-box:after {
@@ -27,7 +35,7 @@
   font-size: 23px;
   left: -23px;
   bottom: 0;
-  color: #fff0c6;
+  color: #eb892e;
 }
 
 .message-coment-box p {

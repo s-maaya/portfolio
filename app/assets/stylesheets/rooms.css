@@ -55,6 +55,8 @@
   overflow: auto;
   width: 100%;
   height: 100vh;
+  margin: 0 30px;
+  text-align: center;
 }
 
 .chat-room {
@@ -63,10 +65,10 @@
 
 .room-show-scroll {
   overflow: auto;
-  width: 100%;
+  width: 95%;
   display: block;
-  background-color: tomato;
-  height: 85vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 87vh;
   box-sizing: border-box;
 }
 
@@ -75,4 +77,17 @@
   position: fixed;
   bottom: 0px;
   right: 10px;
+}
+
+.form-group {
+  widows: 300px;
+  height: 40px;
+}
+
+.current-lyaout {
+  background-color: brown;
+}
+
+.user-lyaout {
+  background-color: cyan;
 }

@@ -1,6 +1,6 @@
 class EndUser::UsersController < EndUser::BaseController
     def show
-      @user = User.find(params[:id])
+        @user = User.find(params[:id])
         @rooms = @user.rooms
         @messages = @user.messages
     end

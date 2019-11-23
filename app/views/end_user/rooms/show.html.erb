@@ -17,10 +17,34 @@
 
 
             <div class="col-lg-7 chat-room">
-                        <h1>chat room</h1>
+                <span><h1>Chat room</h1></span>
                 <div class="row">
                     <div id="messages" class="room-show-scroll" data-room_id="<%= @room.id %>">
-                        <%= render @messages %>
+                        <!--xにroomがcreateされた日を代入する-->
+                        <% x = @room.created_at.strftime("%Y-%m-%d") %>
+                        <!--roomが作成日をchatの一番上に表示する-->
+                        <p><%= x %></p><br>
+                        <% @messages.each do |message| %>
+                        <% if current_user.id == message.user.id %>
+                       
+                        <%= render 'end_user/messages/message', {message: message, layout: "current-lyaout"} %>
+                        かれんと
+                       
+                        <% else %>
+                        
+                        <%= render 'end_user/messages/message', {message: message, layout: "user-lyaout"} %>
+                        ユーザー
+                        
+                        <% end%>
+                            <!--messageがcreateされた日とxの日と一緒だったら日付は表示しない-->
+                            <% if x == message.created_at.strftime("%Y-%m-%d") %>
+                            <% else %>
+                            <!-- 違うときは日付を表示する -->
+                            <%= message.created_at.strftime("%Y-%m-%d") %>
+                            <% end %>
+                            <!--投稿されたmessageの日付をxに代入しておく-->
+                            <% x = message.created_at.strftime("%Y-%m-%d") %>
+                        <% end %>
                     </div>
                 </div>
             </div>
@@ -41,5 +65,4 @@
                     </form>
         </div>
 </div>
-
 
