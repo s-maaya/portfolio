@@ -14,6 +14,9 @@ $(function () {
     },
 
     received: function (data) {
+      $('#messages').animate({
+        scrollTop: $('#messages')[0].scrollHeight
+      }, 1000);
       return $('#messages').append(data["message"]);
       // Called when there's incoming data on the websocket for this channel
       // このチャネルのWebSocketに着信データがあるときに呼び出されます

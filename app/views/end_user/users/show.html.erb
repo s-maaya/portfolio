@@ -4,17 +4,15 @@
     <div class="profile">
         <div class="profile-box">
         <%= form_for(@user) do |f| %>
-                <div class="form-group has-icon">
-                Name <%= f.text_field :name %>
+                <div class="filed">
+                    <%= f.label :'Name' %>
+                    <%= f.text_field :name %>
                 </div>
-                <div class="form-group has-icon">
-                <div class="user-edit-image">
+                <div class="filed">
                     <%= attachment_image_tag @user, :image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
                 </div>
-                <label class="control-label sr-only" for="inputEmail">ProfileImage</label>
                 <%= f.attachment_field :image, placeholder: "プロフィール画像", class: "user-edit-form" %>
-                </div>
-                <div>
+                <div class="filed">
                 <%= f.submit "更新", class:"btn btn-secondary btn-lg rounded-pill" %>
                 </div>
         <% end %>
@@ -22,9 +20,9 @@
     </div>
 
     <div class="profile">
-        <div class="profile-box">
-            投稿した記事一覧
-            <table  border="1" width="50%">
+        <div class="profile-box-list">
+            --投稿一覧--
+            <table  border="1" width="100%"　align="center" class="profile-table">
             <tr>
             <th>タイトル</th><th>開催日</th><th>開催場所</th>
             </tr>
@@ -33,6 +31,9 @@
             <td><%= link_to rooms_path(room.id) do %>
             <%= room.title %>
             <%end%></td>
+            <% if room.start_date.present? %>
+            <td><%= room.start_date.strftime('%Y/%m/%d %H:%M') %>
+            <% end %>
             <td><%= room.address %></td>
             </tr>
             <% end %>
@@ -40,9 +41,10 @@
         </div>
     </div>
 
-
-        チャットにコメントした記事一覧
-        <table border="1" width="50%">
+    <div class="profile">
+        <div class="profile-box-list">
+        --コメント一覧--
+        <table border="1" width="100%" align="center" class="profile-table">
         <tr>
         <th>タイトル</th><th>開催日</th><th>開催場所</th>
         </tr>
@@ -59,11 +61,16 @@
                         <%= m.room.title %>
                     <%end%>
                 </td>
+                <% if m.room.start_date.present? %>
+                <td><%= m.room.start_date.strftime('%Y/%m/%d %H:%M') %></td>
+                <% end %>
                 <td><%= m.room.address %></td>
             <% end %>
         </tr>
         <% end %>
         </table>
+    </div>
+    </div>
 </div>
 
 

@@ -24,9 +24,15 @@ class Admin::RoomsController < Admin::BaseController
     redirect_to room_path(@room)
   end
 
+  def destroy
+    room = Room.find(params[:id])
+    room.destroy
+    redirect_to admin_rooms_path
+end
+
 
   private
   def room_params
-    params.require(:room).permit(:user_id, :message_id, :image, :title, :details, :address, :station)
+    params.require(:room).permit(:user_id, :message_id, :image, :title, :details, :address, :station, :start_date)
   end
 end

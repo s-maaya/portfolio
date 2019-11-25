@@ -1,26 +1,28 @@
 
-<%# if current_user.id == message.user.id %>
-<div class=<%= "current-lyaout" if current_user.id == message.user.id %>>
-    <div class="message-image">
-    <%= message.user.name %><br>
-    <%= attachment_image_tag message.user, :image,　format: 'jpeg', fallback: "no_image.jpg", size: "50x50", class:"image-icon"%><br>
+<div id=<%="message_content"+message.id.to_s%> class="">
+    <i class="name-box"><%= message.user.name %></i>
+        <%= attachment_image_tag message.user, :image,　format: 'jpeg', fallback: "no_image.jpg", size: "50x50", class:"image-icon"%>
         <span class="message-coment-box"><%= message.content %></span>
-        <span><%= message.created_at.strftime('%H:%M') %></span>
-    </div>
+        <span class="name-icon"><%= message.created_at.strftime('%H:%M') %></span>
 </div>
-<%# else %>
-<%
-=begin%>
- user
-<div class="message-image">
-<%= message.user.name %><br>
-<%= attachment_image_tag message.user, :image,　format: 'jpeg', fallback: "no_image.jpg", size: "50x50", class:"image-icon"%><br>
-    <span class="message-coment-box"><%= message.content %></span>
-    <span><%= message.created_at.strftime('%H:%M') %></span>
-</div> 
-<%
-=end%>
 
-<%# end %>
+<script>
+test = function(){
+    let id = <%="message_content"+message.id.to_s%>
+    if( parseInt(document.getElementById('current_user_id').textContent) == <%=message.user_id%>){
+        $(id).attr("class","message-image-cu");
+        let $ownLastMsg = $('message-image-cu').last();
+        $(id).children('img').remove();
+        $('.name-box').remove();
+        $ownLastMsg = $('.message-image-cu').last()
+        $ownLastMsg.children()[0].before($ownLastMsg.children()[1]);
+        // $('.message-coment-box').before($('.name-icon'));
+    }else{
+        $(id).attr("class","message-image-us");
 
+    }
+
+}
+test();
+</script>
 

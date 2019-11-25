@@ -11,32 +11,50 @@
   </head>
 
   <body>
-  <header class="header-line">
-  <div class="continer">
-        <p class="logo-icon">
-          logo_adminuser
-        </p>
-          <% if admin_user_signed_in? %><!--ログイン状態のときに表示される-->
-            <p>adminのログイン状態のとき</p>
-            <%= link_to admin_rooms_path do %>
-              <p class="header-icon">投稿一覧<span class="fas fa-th-large fa-fx-3"></span></p>
-            <%end%>
-            <%= link_to destroy_admin_user_session_path,  method: :delete do %>
-              <p class="header-icon">ログアウト<span class="fas fa-sign-out-alt fa-fx-3"></span></p>
-            <%end%>
-          <% else %><!--ログアウト状態のとき-->
-          <p>ログアウト状態</p>
-            <%= link_to new_admin_user_registration_path do %>
-              <p class="header-icon">管理者登録<span class="fas fa-user-plus fa-fx-3"></span></p>
-            <%end%>
-            <%= link_to new_admin_user_session_path do %>
-              <p class="header-icon">ログイン<span class="fas fa-sign-in-alt fa-fx-3"></span></p>
-            <%end%>
-          <% end %>
+    <div class="container-fluid">
+      <div class="row content">
+      <div class="col-lg-2 side sidenav hidden-xs">
+        <div class="logo-icon">
+          <h1><%= link_to "admin", admin_root_path, class:"icon" %></h1>
+        </div>
 
-  </div>
-  </header>
-  <%= yield %>
+          <div id="nav-list">
+            <ul>
+          <% if admin_user_signed_in? %><!--ログイン状態のときに表示される-->
+            <li class="header-icon">
+                <%= link_to admin_rooms_path , class:"item" do %>
+                <i class="fas fa-th-large fa-fx-3">
+                List</i>
+              <%end%>
+            </li>
+            <li class="header-icon">
+                <%= link_to destroy_admin_user_session_path, class:"item" ,method: :delete do %>
+                <i class="fas fa-sign-out-alt fa-fx-3">
+                log out</i>
+              <%end%>
+            </li>
+
+          <% else %><!--ログアウト状態のとき-->
+            <li class="header-icon">
+                <%= link_to new_admin_user_registration_path, class:"item"  do %>
+                <i class="fas fa-user-plus fa-fx-3">
+                sign up</i>
+              <%end%>
+            </li>
+            <li class="header-icon">
+                <%= link_to new_admin_user_session_path, class:"item"  do %>
+                <i class="fas fa-sign-in-alt fa-fx-3">
+                log in</i>
+              <%end%>
+            </li>
+          <% end %>
+        </div>
+      </div>
+    <div class="col-lg-10 got-admin">
+      <%= yield %>
+    </div>
+</div>
+</div>
 
   </body>
   </html>

@@ -21,6 +21,7 @@ class EndUser::RoomsController < EndUser::BaseController
 
   def create
     @room = Room.new(room_params)
+    binding.pry
     # 現在ログインしているユーザーの情報をroom.userに代入する
     @room.user_id = current_user.id
     if @room.save
@@ -33,6 +34,6 @@ class EndUser::RoomsController < EndUser::BaseController
 
   private
   def room_params
-    params.require(:room).permit(:user_id, :image, :title, :details, :address, :station)
+    params.require(:room).permit(:user_id, :image, :title, :details, :address, :station, :start_date)
   end
 end

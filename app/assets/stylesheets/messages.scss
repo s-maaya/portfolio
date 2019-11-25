@@ -2,12 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.image-icon {
+// ------閲覧userのcss-------------
+
+.message-image-us {
+    margin: 20px 0;
+}
+
+
+.message-image-us .image-icon {
     border-radius: 50%;
 }
 
-// ------メッセージのコメント用の装飾-------------
-.message-coment-box {
+.message-image-us .message-coment-box {
     position: relative;
     margin: 2em 0 2em 40px;
     padding: 8px 15px;
@@ -15,15 +21,7 @@
     border-radius: 30px;
 }
 
-.message-coment-box-left {
-    position: relative;
-    margin: 2em 0 2em 40px;
-    padding: 8px 15px;
-    background: blueviolet;
-    border-radius: 30px;
-}
-
-.message-coment-box:before {
+.message-image-us .message-coment-box:before {
     font-family: FontAwesome;
     content: "\f111";
     position: absolute;
@@ -33,7 +31,7 @@
     color: #eb892e;
 }
 
-.message-coment-box:after {
+.message-image-us .message-coment-box:after {
     font-family: FontAwesome;
     content: "\f111";
     position: absolute;
@@ -43,7 +41,25 @@
     color: #eb892e;
 }
 
-.message-coment-box p {
-    margin: 0;
-    padding: 0;
+// ---------カレントuserのcss---------------
+.message-image-cu {
+    text-align: right;
+    margin: 20px;
+}
+
+.message-image-cu .message-coment-box {
+    position: relative;
+    margin: 2em 40px 2em 0;
+    padding: 8px 15px;
+    background: #72ddeb;
+    border-radius: 30px;
+    // float: right;
+}
+
+.message-image-cu .name-icon {
+    // float: right;
+}
+
+.current-lyaout {
+    margin-top: 10px;
 }

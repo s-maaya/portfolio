@@ -15,10 +15,19 @@
  */
 @import "bootstrap";
 
+// --------sign up------
+.field .actions {
+    margin: 20px;
+}
+
+
+
+
 //------- ヘッダー----
 .container-fluid {
     width: 100%;
     min-height: 100vh;
+    padding: 0;
 }
 
 .side {
@@ -100,6 +109,11 @@ ul {
     min-height: 100vh;
 }
 
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
 
 // ---------my page----------------
 
@@ -116,6 +130,7 @@ ul {
 
 .profile {
     text-align: center;
+    margin: 40px;
 }
 
 .profile-box {
@@ -123,7 +138,35 @@ ul {
     width: 100%;
 }
 
-.btn {
+.btn-box {
     font-size: 1rem;
-    display: block;
+}
+
+.profile-table {
+    text-align: center;
+}
+
+.profile-box-list {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+}
+
+
+// ---------admin-------
+.got-admin {
+    width: 100%;
+    height: 800px;
+    padding: 0;
+    background-color: antiquewhite;
+    background-position: top center;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.admin-table {
+    position: relative;
 }

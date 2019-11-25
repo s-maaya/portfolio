@@ -68,6 +68,11 @@
 }
 
 // --------show---------
+
+#current_user_id {
+    display: none;
+}
+
 .chat-room {
     width: 90%;
     // box-sizing: border-box;
@@ -82,22 +87,42 @@
     box-sizing: border-box;
 }
 
-.form {
-    display: block;
-    position: fixed;
-    bottom: 0px;
-    right: 10px;
-}
-
 .form-group {
-    widows: 300px;
-    height: 40px;
+    width: 95%;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-.current-lyaout {
-    background-color: brown;
+
+#chat-content {
+    width: 92%;
 }
 
-.user-lyaout {
-    background-color: cyan;
+.at {
+    text-align: center;
+}
+
+// -----------showの詳細部分----------------
+.room-show-table {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    text-align: center;
+    word-break: break-all;
+}
+
+table th {
+    width: 20%;
+}
+
+
+// -----------new--------
+.room-contanir {
+    text-align: center;
+}
+
+.room-new-box {
+    background-color: bisque;
+    width: 50%;
+    height: 70vh;
+    margin: auto;
 }
