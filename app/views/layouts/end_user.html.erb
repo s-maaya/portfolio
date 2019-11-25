@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Portfolio</title>
+    <title>Freedom</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,7 +15,7 @@
       <div class="row content">
       <div class="col-lg-2 side sidenav hidden-xs">
         <div class="logo-icon">
-          <h1><%= link_to "logo-e", root_path, class:"icon" %></h1>
+          <%= link_to image_tag('freedom.png', width: '200', alt: 'logo'), root_path %>
         </div>
             <!--サイドメニューのリスト-->
             <div id="nav-list">
