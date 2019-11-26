@@ -5,6 +5,6 @@ test:
   adapter: async
 
 production:
-  adapter: redis
+  adapter: async
   url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: portfolio_production
+  # channel_prefix: portfolio_production

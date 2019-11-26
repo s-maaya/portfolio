@@ -68,3 +68,7 @@ gem "refile-mini_magick"
 gem 'kaminari','~> 1.1.1'
 gem 'jquery-rails'
 gem 'pry-byebug'
+
+group :production do
+  gem 'mysql2'
+end
