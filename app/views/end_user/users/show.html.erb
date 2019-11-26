@@ -1,0 +1,76 @@
+<div class="got-show">
+        <h1>My ページ</h1>
+
+    <div class="profile">
+        <div class="profile-box">
+        <%= form_for(@user) do |f| %>
+                <div class="filed">
+                    <%= f.label :'Name' %>
+                    <%= f.text_field :name %>
+                </div>
+                <div class="filed">
+                    <%= attachment_image_tag @user, :image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+                </div>
+                <%= f.attachment_field :image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+                <div class="filed">
+                <%= f.submit "更新", class:"btn btn-secondary btn-lg rounded-pill" %>
+                </div>
+        <% end %>
+        </div>
+    </div>
+
+    <div class="profile">
+        <div class="profile-box-list">
+            --投稿一覧--
+            <table  border="1" width="100%"　align="center" class="profile-table">
+            <tr>
+            <th>タイトル</th><th>開催日</th><th>開催場所</th>
+            </tr>
+            <% @rooms.each do |room| %>
+            <tr>
+            <td><%= link_to rooms_path(room.id) do %>
+            <%= room.title %>
+            <%end%></td>
+            <% if room.start_date.present? %>
+            <td><%= room.start_date.strftime('%Y/%m/%d %H:%M') %>
+            <% end %>
+            <td><%= room.address %></td>
+            </tr>
+            <% end %>
+            </table>
+        </div>
+    </div>
+
+    <div class="profile">
+        <div class="profile-box-list">
+        --コメント一覧--
+        <table border="1" width="100%" align="center" class="profile-table">
+        <tr>
+        <th>タイトル</th><th>開催日</th><th>開催場所</th>
+        </tr>
+        <!--メッセージで同じroomidをもつものは１つだけ表示させる-->
+        <% x = 0 %>
+        <% @messages.each do |m| %>
+        <tr>
+            <% if x == m.room_id %>
+            <!--処理させない-->
+            <% else %>
+                <% x = m.room_id %> <!--処理されたときのidをxに代入-->
+                <td>
+                    <%= link_to rooms_path(m.room_id) do %>
+                        <%= m.room.title %>
+                    <%end%>
+                </td>
+                <% if m.room.start_date.present? %>
+                <td><%= m.room.start_date.strftime('%Y/%m/%d %H:%M') %></td>
+                <% end %>
+                <td><%= m.room.address %></td>
+            <% end %>
+        </tr>
+        <% end %>
+        </table>
+    </div>
+    </div>
+</div>
+
+

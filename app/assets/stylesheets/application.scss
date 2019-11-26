@@ -1,0 +1,173 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+
+// --------sign up------
+.field .actions {
+    margin: 20px;
+}
+
+
+
+
+//------- ヘッダー----
+.container-fluid {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.side {
+    // align-items: center;
+    background-color: rgb(52, 54, 56);
+    width: 100%;
+    font-family: Roboto, sans-serif;
+}
+
+
+// ------logoの部分------------
+.logo-icon {
+    vertical-align: bottom;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.icon {
+    color: white;
+    vertical-align: bottom;
+
+}
+
+// -------サイドメニューの部分----------------------
+#nav-list {
+    list-style: none;
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+}
+
+.header-icon {
+    list-style: none;
+    font-size: 0.9em;
+    font-family: Roboto, sans-serif;
+    font-family: '游ゴシック体', '游ゴシック', "Yu Gothic", YuGothic, 'Arial', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Osaka', 'メイリオ', 'Meiryo', sans-serif;
+    font-weight: 300;
+    line-height: 1.2;
+    display: block;
+    text-align: center;
+}
+
+
+.item {
+    width: 100%;
+    color: rgb(224, 224, 224);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    display: block;
+    padding: 20px 24px;
+    opacity: 0.6;
+    font-size: 20px;
+}
+
+// マウスオーバーしたときにマスクに変わる。
+.item:hover {
+    -webkit-transform: scale(1);
+    /* 大きさを１にして表示する */
+    transform: scale(1);
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+// -------yieldの部分---------------
+
+.got {
+    width: 100%;
+    height: 800px;
+    padding: 0;
+    background-image: url(team.jpg);
+    background-position: top center;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
+// ---------my page----------------
+
+.got-show {
+    width: 100%;
+    height: 800px;
+    padding: 0;
+    background-image: url(pen.jpg);
+    background-position: top center;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.profile {
+    text-align: center;
+    margin: 40px;
+}
+
+.profile-box {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+}
+
+.btn-box {
+    font-size: 1rem;
+}
+
+.profile-table {
+    text-align: center;
+}
+
+.profile-box-list {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+}
+
+
+// ---------admin-------
+.got-admin {
+    width: 100%;
+    height: 800px;
+    padding: 0;
+    background-color: antiquewhite;
+    background-position: top center;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.admin-table {
+    position: relative;
+}

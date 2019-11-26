@@ -1,0 +1,128 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// end-usr-room-indexのcss
+
+.content {
+    height: 550px
+}
+
+
+.index-box {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.index-list {
+    width: 200px;
+    height: 300px;
+    margin: 30px;
+    position: relative;
+    background-color: rgba(169, 169, 169, 0.8);
+    float: left;
+}
+
+.index-list .caption {
+    font-size: 90%;
+    color: #fff;
+    padding-top: 50px;
+    overflow-wrap: break-word;
+    padding: 10px;
+}
+
+//マスク時に設定
+.index-list .mask {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    -webkit-transform: scale(0);
+    /* (伸縮)大きさを０にして表示しない */
+    transform: scale(0);
+}
+
+// マウスオーバーしたときにマスクに変わる。
+.index-list:hover .mask {
+    -webkit-transform: scale(1);
+    /* 大きさを１にして表示する */
+    transform: scale(1);
+    width: 100%;
+    text-align: center;
+}
+
+.room-index-scroll {
+    overflow: auto;
+    width: 100%;
+    height: 100vh;
+    margin: 0 30px;
+    text-align: center;
+}
+
+// --------show---------
+
+#current_user_id {
+    display: none;
+}
+
+.chat-room {
+    width: 90%;
+    // box-sizing: border-box;
+}
+
+.room-show-scroll {
+    overflow: auto;
+    width: 95%;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 85vh;
+    box-sizing: border-box;
+}
+
+.form-group {
+    width: 95%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+#chat-content {
+    width: 92%;
+}
+
+.at {
+    text-align: center;
+}
+
+// -----------showの詳細部分----------------
+.room-show-table {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    text-align: center;
+    word-break: break-all;
+}
+
+table th {
+    width: 20%;
+}
+
+
+// -----------new--------
+.room-contanir {
+    text-align: center;
+}
+
+.room-new-box {
+    background-color: bisque;
+    width: 50%;
+    height: 70vh;
+    margin: auto;
+}
