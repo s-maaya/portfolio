@@ -29,4 +29,4 @@ production:
   collation: utf8mb4_general_ci
   host: rds-mysql-server.cn8uelr8rsza.us-east-2.rds.amazonaws.com
   username: root
-  password: Ma08046333532
+  password: ma08046333532
