@@ -11,13 +11,19 @@
   text-decoration: none;
 }
 
+.index-box:hover {
+  color: gray;
+  text-decoration: none;
+}
+
 .index-list {
   width: 200px;
   height: 300px;
   margin: 30px;
   position: relative;
-  background-color: rgba(169, 169, 169, 0.8);
+  background-color: rgba(170, 170, 170, 0.8);
   float: left;
+  text-decoration: none;
 }
 
 .index-list .caption {
@@ -35,7 +41,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   -webkit-transform: scale(0);
@@ -110,4 +116,13 @@ table th {
   width: 50%;
   height: 70vh;
   margin: auto;
+}
+
+.top-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 60%;
+  margin: 20% 20%;
+  text-align: center;
+  padding: 50px;
+  font-family: '游ゴシック体', '游ゴシック', "Yu Gothic", YuGothic, 'Arial', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Osaka', 'メイリオ', 'Meiryo', sans-serif;
 }

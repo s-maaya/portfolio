@@ -1,4 +1,6 @@
 class EndUser::RoomsController < EndUser::BaseController
+  before_action :authenticate_user!, only:[:show]
+
   def top
   end
 
