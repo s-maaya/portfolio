@@ -13,7 +13,8 @@ test = function(){
         $(id).attr("class","message-image-cu");
         let $ownLastMsg = $('message-image-cu').last();
         $(id).children('img').remove();
-        $('.name-box').remove();
+        $(id).children('.name-box').remove();
+        // $('.name-box').remove();
         $ownLastMsg = $('.message-image-cu').last()
         $ownLastMsg.children()[0].before($ownLastMsg.children()[1]);
         // $('.message-coment-box').before($('.name-icon'));
