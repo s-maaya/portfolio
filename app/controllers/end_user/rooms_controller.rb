@@ -10,8 +10,10 @@ class EndUser::RoomsController < EndUser::BaseController
   end
 
   def show
+    @post_image = PostImage.new
     @room = Room.find(params[:id])
     @messages = @room.messages # Room(親)モデルのhas_manyとおなじ
+    @post_images = @room.post_images
   end
 
   def new
@@ -23,7 +25,6 @@ class EndUser::RoomsController < EndUser::BaseController
 
   def create
     @room = Room.new(room_params)
-    binding.pry
     # 現在ログインしているユーザーの情報をroom.userに代入する
     @room.user_id = current_user.id
     if @room.save

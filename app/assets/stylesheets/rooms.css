@@ -107,6 +107,14 @@ table th {
   width: 20%;
 }
 
+.image-box {
+  max-width: 100%;
+}
+
+.box {
+  float: left;
+}
+
 .room-contanir {
   text-align: center;
 }
@@ -116,6 +124,11 @@ table th {
   width: 50%;
   height: 70vh;
   margin: auto;
+}
+
+.image-text {
+  position: relative;
+  top: 0px;
 }
 
 .top-container {
