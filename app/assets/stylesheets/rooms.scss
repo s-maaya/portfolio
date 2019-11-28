@@ -123,6 +123,15 @@ table th {
     width: 20%;
 }
 
+// ----------showの画像投稿部分----------------------------
+
+.image-box {
+    max-width: 100%;
+}
+
+.box {
+    float: left;
+}
 
 // -----------new--------
 .room-contanir {
@@ -136,6 +145,12 @@ table th {
     margin: auto;
 }
 
+.image-text {
+    position: relative;
+    top: 0px;
+}
+
+
 
 // --------top---------------
 
@@ -148,10 +163,4 @@ table th {
     padding: 50px;
     font-family: '游ゴシック体', '游ゴシック', "Yu Gothic", YuGothic, 'Arial', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Osaka', 'メイリオ', 'Meiryo', sans-serif;
 
-
-}
-
-.top-box {
-    // text-align: center;
-    // margin-top: 30px;
 }

@@ -28,9 +28,30 @@
                 <td ~~~ style="word-wrap:break-word;"><%= @room.details %></td>
             </tr>
         </table>
+        投稿と画像がでる
+        <div class="row">
+            <div class="image-container">
+                    <div class="image-box">
+                        <% @post_images.each do |post_image| %>
+                        <span class=™box™>
+                            <%= attachment_image_tag post_image, :post_image, :fill, 100, 100, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+                            <span class="image-text"><%= post_image.user.name %></span>
+                        </span>
+                        <% end %>
+                    </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="from-box">
+                <%= form_for [@room, @post_image] do |f| %>
+                    <div class="image-post">
+                        <%= f.attachment_field :post_image, placeholder: "写真", class: "user-edit-form" %>
+                    </div>
+                        <%= f.submit "投稿する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+                <% end %>
+            </div>
+        </div>
     </div>
-
-
 
     <div class="col-lg-7 chat-room">
         <span>

@@ -17,7 +17,9 @@ Rails.application.routes.draw do
       passwords: 'end_user/users/passwords'
     }
     root to: 'rooms#top'
-    resources :rooms
+    resources :rooms do
+      resource :post_images, only: [:create, :destroy]
+    end
     resources :messages
     resources :users
     mount ActionCable.server => '/cable'
