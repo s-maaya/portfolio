@@ -5,7 +5,7 @@ class EndUser::RoomsController < EndUser::BaseController
   end
 
   def index
-    @rooms = Room.all
+    @rooms = Room.all.reverse_order
     # @room = Room.find(params[:id])
   end
 

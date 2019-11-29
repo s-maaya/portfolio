@@ -150,6 +150,7 @@ table th {
 .image-box {
     max-width: 100%;
     overflow: auto;
+    text-align: center;
 }
 
 .box {
@@ -163,10 +164,11 @@ table th {
 }
 
 .room-new-box {
-    background-color: bisque;
+    background-color: rgba(255, 255, 255, 0.8);
     width: 50%;
     height: 70vh;
     margin: auto;
+    margin-top: 30px;
 }
 
 .image-text {

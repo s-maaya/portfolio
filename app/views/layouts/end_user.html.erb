@@ -21,19 +21,19 @@
             <div id="nav-list">
             <ul>
               <% if user_signed_in? %><!--ログイン状態のときに表示される-->
-                <li class="header-icon">
+                <li class="header-icon roomnew">
                     <%= link_to new_room_path ,class:"item" do %>
                       <i class="fas fa-folder-plus fa-fx-3"><br>
                       New</i>
                     <%end%>
                 </li>
-                  <li class="header-icon">
+                  <li class="header-icon mypage">
                     <%= link_to user_path(current_user.id) ,class:"item" do %>
                       <i class="fas fa-user-alt fa-fx-3"><br>
                       My page</i>
                     <%end%>
                 </li>
-                  <li class="header-icon">
+                  <li class="header-icon list">
                     <%= link_to rooms_path ,class:"item" do %>
                       <i class="fas fa-th-large fa-fx-3"><br>
                       List</i>
@@ -47,19 +47,19 @@
                 </li>
           <% else %>
               <!--ログアウト状態のときに表示される-->
-                <li class="header-icon">
+                <li class="header-icon roomnew">
                   <%= link_to rooms_path ,class:"item" do %>
                     <i class="fas fa-th-large fa-fx-3"><br>
                     List</i>
                   <%end%>
                 </li>
-                <li class="header-icon">
+                <li class="header-icon mypage">
                   <%= link_to new_user_registration_path ,class:"item" do %>
                     <i class="fas fa-user-plus fa-fx-3"><br>
                     Sign up</i>
                   <%end%>
                 </li>
-                  <li class="header-icon">
+                  <li class="header-icon list">
                   <%= link_to new_user_session_path ,class:"item" do %>
                     <i class="fas fa-sign-in-alt fa-fx-3"><br>
                     Log in</i>

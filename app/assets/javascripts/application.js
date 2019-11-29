@@ -14,3 +14,13 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+$(function () {
+    let currentPath = window.location.pathname;
+    if (currentPath.indexOf("/rooms/new") === 0) {
+        $('.roomnew').addClass('menucollumn');
+    } else if (currentPath.indexOf("/users") === 0) {
+        $('.mypage').addClass('menucollumn');
+    } else if (currentPath.indexOf("/rooms") === 0) {
+        $('.list').addClass('menucollumn');
+    }
+})

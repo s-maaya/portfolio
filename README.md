@@ -13,65 +13,30 @@
 リアルタイムのチャット機能（action cable）をつかって会話ができます。
 また、思い出を残せるように写真が保存できます。
 
-***デモ***
+***URL***
 
-![デモ](https://image-url.gif)
+![URL](http://18.220.181.104/)
 
 ## 機能
-
-- 機能1（action cable）
-- 機能2 ()
-- 機能3
-- ...
-
-他の機能はこちらを参照して下さい。`awesome-tool --help`.
+以下のことができます。
+- 画像投稿・画像保存
+- chat
 
 ## 必要要件
 
-・Safariで開くとlayoutが少々崩れます。
-・ネット環境内でないと、action cableが動かないことがあります。
-- 要件
-- ...
+- PCでのみサイトを閲覧することができます。
+- （スマートフォン対応しておりません）
 
 ## 使い方
 
-1. 使い方
-2. 使い方
-3. 使い方
+1. サイドバーの’new’から記事を投稿してください。
+    投稿後は詳細ページに飛びます。
+    chat roomにコメントをお願いします。
+2. 友達との思い出の写真をroomに保存できます。
+3. 自身のマイページで投稿した記事と他にroomのchatでコメントした一覧が確認でます。
 
-## インストール
 
-```
-$ git clone https://github.com/TomoakiTANAKA/awesome-tool
-$ cd awesome-tool
-$ sh setup.sh
-$ ~do anything~
-```
-
-## テスト
-
-1. 使い方
-2. 使い方
-3. 使い方
-
-## デプロイ
-
-1. デプロイ
-2. デプロイ
-3. デプロイ
-
-## その他
-
-その他その他その他その他
-その他その他その他その他
-その他その他その他その他
-その他その他その他その他
 
 ## 作者
 
-[@TanakanoAnchan](https://twitter.com/TanakanoAnchan)
-mail to: xxxx@mail.com
-
-## ライセンス
-
-[MIT](http://TomoakiTANAKA.mit-license.org)</blockquote>
+mail to: ｍ.2212s.a@gmail.com
