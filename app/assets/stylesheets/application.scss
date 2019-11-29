@@ -102,6 +102,11 @@ ul {
 }
 
 
+#tab-menu .active {
+    background: #fff;
+    color: #000;
+}
+
 
 
 // -------yieldの部分---------------
@@ -181,4 +186,16 @@ ul {
 
 .admin-table {
     position: relative;
+}
+
+// --------login sign up-----------
+.setting {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(52, 54, 56);
+}
+
+.text {
+    text-align: center;
+    color: gray;
 }

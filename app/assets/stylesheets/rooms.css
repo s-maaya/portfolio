@@ -1,4 +1,8 @@
 @charset "UTF-8";
+room-text h1 {
+  color: #494848;
+}
+
 .content {
   height: 550px;
 }
@@ -83,17 +87,23 @@
 }
 
 .form-group {
-  width: 95%;
+  width: 85%;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
 #chat-content {
-  width: 92%;
+  width: 85%;
 }
 
 .at {
   text-align: center;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #494949 !important;
+  border-color: #202020 !important;
 }
 
 .room-show-table {
@@ -107,12 +117,23 @@ table th {
   width: 20%;
 }
 
+.image-container {
+  overflow: auto;
+  width: 95%;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 60vh;
+  box-sizing: border-box;
+}
+
 .image-box {
   max-width: 100%;
+  overflow: auto;
 }
 
 .box {
   float: left;
+  width: 100%;
 }
 
 .room-contanir {
