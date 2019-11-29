@@ -199,3 +199,12 @@ ul {
     text-align: center;
     color: gray;
 }
+
+.menucollumn {
+    -webkit-transform: scale(1);
+    /* 大きさを１にして表示する */
+    transform: scale(1);
+    width: 100%;
+    text-align: center;
+    background-color: rgb(192, 192, 192);
+}
