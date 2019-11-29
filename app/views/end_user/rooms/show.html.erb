@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-5">
-        <span>
+        <span class="room-text">
             <h1>Content</h1>
         </span>
 
@@ -28,14 +28,15 @@
                 <td ~~~ style="word-wrap:break-word;"><%= @room.details %></td>
             </tr>
         </table>
-        投稿と画像がでる
         <div class="row">
+            <span class="room-text">
+                <h1>memories</h1>
+            </span>
             <div class="image-container">
                     <div class="image-box">
                         <% @post_images.each do |post_image| %>
                         <span class=™box™>
-                            <%= attachment_image_tag post_image, :post_image, :fill, 100, 100, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
-                            <span class="image-text"><%= post_image.user.name %></span>
+                            <%= attachment_image_tag post_image, :post_image, :fill, 200, 200, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
                         </span>
                         <% end %>
                     </div>
@@ -54,7 +55,7 @@
     </div>
 
     <div class="col-lg-7 chat-room">
-        <span>
+        <span class="room-text">
             <h1>Chat room</h1>
         </span>
         <div class="row">
@@ -80,8 +81,8 @@
                 <% end %>
             </div>
         </div>
-    </div>
-    <div class="col-lg-7 offset-lg-5">
+        <!--
+    <div class="col-lg-7 offset-lg-5">-->
         <div class="row">
             <div class="form-group">
                 <form class="form-inline">
@@ -94,11 +95,11 @@
                         id="chat-user-id" />
                     <!-- roomidのはなし-->
                     <input type="hidden" name="roomid" value=<%= @room.id %> class="form-control" id="chat-room-id" />
-                    <input type="button" id="button" class="btn-primary" value="送信">
+                    <input type="button" id="button" class="btn-css btn-primary btn" value="submit">
                 </form>
             </div>
         </div>
+        <!--
+    </div>-->
     </div>
-    <!--送信ボタンのボックス-->
-
 </div>
