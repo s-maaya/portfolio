@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     root to: 'rooms#top'
     resources :rooms do
       resource :post_images, only: [:create, :destroy]
+      get :input_password,on: :member, as:'input_password'
+      post :authenticate, on: :member, as:'authenticate'
     end
     resources :messages
     resources :users
