@@ -72,3 +72,5 @@ gem 'pry-byebug'
 group :production do
   gem 'mysql2'
 end
+
+gem 'bcrypt','3.1.11'

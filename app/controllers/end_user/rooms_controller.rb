@@ -10,10 +10,15 @@ class EndUser::RoomsController < EndUser::BaseController
   end
 
   def show
-    @post_image = PostImage.new
     @room = Room.find(params[:id])
+    if @room.password_digest.present? && session[:authenticated_room] != @room.id
+      redirect_to rooms_path
+    else
+    @post_image = PostImage.new
     @messages = @room.messages # Room(親)モデルのhas_manyとおなじ
     @post_images = @room.post_images
+    session.delete(:authenticated_room)
+    end
   end
 
   def new
@@ -28,6 +33,7 @@ class EndUser::RoomsController < EndUser::BaseController
     # 現在ログインしているユーザーの情報をroom.userに代入する
     @room.user_id = current_user.id
     if @room.save
+      session[:authenticated_room]=@room.id
       redirect_to room_path(@room.id)
     else
       render :new_room
@@ -35,8 +41,28 @@ class EndUser::RoomsController < EndUser::BaseController
   end
 
 
+
+#パスワードの入力画面
+  def input_password
+    @room = Room.find(params[:id])
+  end
+
+    # パスワードの認証アクション
+  def authenticate
+    room = Room.find(params[:id])
+    if room.authenticate(params[:room][:password])
+      #通行書の役割
+      session[:authenticated_room]=room.id
+      redirect_to room_path(room)
+    else
+      @room = room
+      render :input_password
+    end
+  end
+
+
   private
   def room_params
-    params.require(:room).permit(:user_id, :image, :title, :details, :address, :station, :start_date)
+    params.require(:room).permit(:user_id, :image, :title, :details, :address, :station, :start_date, :password)
   end
 end

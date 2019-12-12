@@ -3,7 +3,12 @@
 <div class="row room-index-scroll">
         <% @rooms.each do |room| %>
                 <!-- %= をつけるときは見た目に出すとき >-->
-                <%= link_to room_path(room), class:'index-box index-list' do %>
+                <%if room.password_digest.present? %>
+                <% path = input_password_room_path(room) %>
+                <% else %>
+                <% path = room_path(room) %>
+                <% end %>
+                <%= link_to "#{path}", class:'index-box index-list' do %>
                         --開催日時--<br>
                         <!--roomの日時が存在するときだけ表示する-->
                         <% if room.start_date.present? %>
@@ -18,6 +23,10 @@
                         <div class="mask caption">
                                 <%= room.details %>
                         </div>
+                        <% if room.password_digest.present?%>
+                        <p>パスワードあります。</p>
+                        <%end%>
+
                 <% end %>
         <% end %>
 </div>
